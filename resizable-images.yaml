@@ -1,0 +1,20 @@
+api_version: '1'
+application: YOUR_APP
+basic_scaling:
+  max_instances: 2
+handlers:
+- secure: optional
+  static_files: favicon.ico
+  upload: favicon\.ico
+  url: /favicon\.ico
+- script: main.app
+  secure: always
+  url: .*
+instance_class: B4
+libraries:
+- name: webapp2
+  version: 2.5.2
+module: resizable-images
+runtime: python27
+threadsafe: true
+version: p1
